@@ -1,14 +1,24 @@
 package com.bradlarsenfinal.springboot.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity(name="food")
+
 public class Food {
 	
 	private Integer foodId;
 	private String name;
 	private String vendorName;
 	private String category;
+	
 	/**
 	 * @return the category
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public String getCategory() {
 		return category;
 	}

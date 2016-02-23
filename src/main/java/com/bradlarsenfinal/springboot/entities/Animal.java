@@ -1,5 +1,9 @@
 package com.bradlarsenfinal.springboot.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Entity for the animal table including
@@ -7,6 +11,9 @@ package com.bradlarsenfinal.springboot.entities;
  * @author blarsen
  *
  */
+
+@Entity(name="animals")
+
 public class Animal {
 	
 	private Integer animalId;
@@ -17,6 +24,8 @@ public class Animal {
 	/**
 	 * @return the animalId
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getAnimalId() {
 		return animalId;
 	}

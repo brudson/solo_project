@@ -2,6 +2,11 @@ package com.bradlarsenfinal.springboot.entities;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * Enclosure entity containing:
  * name, animal, # of animals, feeding time, condition
@@ -9,6 +14,8 @@ import java.sql.Timestamp;
  * @author blarsen
  *
  */
+
+@Entity(name="enclosure")
 
 public class Enclosure {
 	
@@ -22,6 +29,8 @@ public class Enclosure {
 	/**
 	 * @return the enclosureId
 	 */
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getEnclosureId() {
 		return enclosureId;
 	}
