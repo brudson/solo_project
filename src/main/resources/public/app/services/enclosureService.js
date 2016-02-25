@@ -1,13 +1,30 @@
 angular.module('app').service('enclosureService', ['$http', 
 function($http){
 	
-	var enclosureEndPoint = "/enclosures";
-	
-	function createEnclosure(){
+	function getAllEnclosures(){
 		
-		console.log("enclosure post");
+		return $http.get('/viewEnclosure')
 		
 	}
+	
+	function updateEnclosures(enclosure){
+		console.log("im in the service");
+		console.log(enclosure);
+	}
+	
+	function deleteEnclosures(id){
+		
+		
+	}
+	
+	return {
+		
+    	getAllEnclosures : getAllEnclosures,
+    	deleteEnclosures : deleteEnclosures,
+    	updateEnclosures : updateEnclosures
+    	
+    };
+	
 }]);	
 
 	

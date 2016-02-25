@@ -1,11 +1,14 @@
 package com.bradlarsenfinal.springboot.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bradlarsenfinal.springboot.dao.EnclosureDao;
 import com.bradlarsenfinal.springboot.entities.Enclosure;
 
-import EnclosureDao.EnclosureDao;
+
 
 
 /**
@@ -16,7 +19,7 @@ import EnclosureDao.EnclosureDao;
 @Service
 public class EnclosureService {
 	
-	@Autowired(required=true)
+	@Autowired(required = true)
 	private EnclosureDao enclosureDao;
 	
 	/**
@@ -35,6 +38,12 @@ public class EnclosureService {
 	public void newEnclosure(Enclosure enclosure){
 		
 		enclosureDao.newEnclosure(enclosure);
+		
+	}
+
+	public List<Enclosure> getAllEnclosures() {
+		
+		return enclosureDao.getAllEnclosures();
 		
 	}
 

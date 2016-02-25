@@ -1,7 +1,5 @@
 package com.bradlarsenfinal.springboot.entities;
 
-import java.sql.Timestamp;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +21,7 @@ public class Enclosure {
 	private String enclosureName;
 	private String animal;
 	private Integer numberOfAnimals;
-	private Timestamp feedingTime;
+	private String feedingTime;
 	private String condition;
 	
 	/**
@@ -67,13 +65,13 @@ public class Enclosure {
 	/**
 	 * @return the feedingTime
 	 */
-	public Timestamp getFeedingTime() {
+	public String getFeedingTime() {
 		return feedingTime;
 	}
 	/**
 	 * @param feedingTime the feedingTime to set
 	 */
-	public void setFeedingTime(Timestamp feedingTime) {
+	public void setFeedingTime(String feedingTime) {
 		this.feedingTime = feedingTime;
 	}
 	/**

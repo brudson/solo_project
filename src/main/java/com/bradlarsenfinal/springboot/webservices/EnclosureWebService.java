@@ -1,5 +1,7 @@
 package com.bradlarsenfinal.springboot.webservices;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,10 +38,17 @@ public class EnclosureWebService {
 	 * Calls the newEnclosure service and passes the users new enclosure in
 	 * @param enclosure object created from user data
 	 */
-	@RequestMapping(value="/enclosure", method = RequestMethod.POST)
+	@RequestMapping(value="/addEnclosure", method = RequestMethod.POST)
 	public void addNewEnclosure(@RequestBody Enclosure enclosure){
 		
 		enclosureService.newEnclosure(enclosure);
+		
+	}
+	
+	@RequestMapping(value="/viewEnclosure", method = RequestMethod.GET)
+	public List<Enclosure> getEnclosures(){
+		
+		return enclosureService.getAllEnclosures();
 		
 	}
 

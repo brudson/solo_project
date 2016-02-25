@@ -1,4 +1,6 @@
-package EnclosureDao;
+package com.bradlarsenfinal.springboot.dao;
+
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -7,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Component;
 
 import com.bradlarsenfinal.springboot.entities.Enclosure;
+import com.bradlarsenfinal.springboot.service.EnclosureService;
 
 /**
  * Communicates with the database concerning enclosures
@@ -39,6 +42,14 @@ public class EnclosureDao {
 		em.flush();
 		
 		return enclosure;
+		
+	}
+
+	public List<Enclosure> getAllEnclosures() {
+		
+		List<Enclosure> allEnclosures = em.createQuery("SELECT d FROM enclosure d", Enclosure.class).getResultList();
+		
+		return allEnclosures;
 		
 	}
 	
