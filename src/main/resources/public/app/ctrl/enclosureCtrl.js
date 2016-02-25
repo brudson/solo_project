@@ -1,10 +1,8 @@
-angular.module('app').controller('enclosureCtrl', ['$scope', '$http', '$uibModal', 'enclosureService', 
-function($scope, $http, $uibModal, enclosureService){
+angular.module('app').controller('enclosureCtrl', ['$scope', '$http', '$location', 'enclosureService', 
+function($scope, $http, $location, enclosureService){
 	
 	$scope.toggleSelect 		= 0;
 	$scope.enclosureStatus 		= "Show Enclosures";
-	$scope.animationsEnabled 	= true;
-	
 	
 	/*
 	 * newEnclosure creates an object from data provided by the user and passes
@@ -23,6 +21,12 @@ function($scope, $http, $uibModal, enclosureService){
 		$http.post("/addEnclosure", data).success(function(status){
 
 			alert("success");
+			
+			$scope.enclosureName		= "";
+			$scope.enclosureAnimals		= "";
+			$scope.enclosureNumAnimals	= "";
+			$scope.enclosureFeedTime	= "";
+			$scope.enclosureCondition	= "";
 
 		}).error(function(){
 			
@@ -67,59 +71,20 @@ function($scope, $http, $uibModal, enclosureService){
 	
 	$scope.deleteEnclosure = function(id){
 		
-		console.log(id);
-		
 		enclosureService.deleteEnclosures(id);
 		
 	}
 	
-	$scope.open = function(enclosure) {
-		
-		console.log(enclosure);
-		
-		var modalInstance = $uibModal.open({
-			animation: $scope.animationsEnabled,
-			templateUrl: 'myModalContent.html',
-			controller: 'ModalInstanceCtrl',
-			resolve:{
-				
-			}
-		});
-		
-	};
-	
-	$scope.toggleAnimation = function () {
-		$scope.animationsEnabled = !$scope.animationsEnabled;
-	};
-	
-}]);
-
-
-
-angular.module('app').controller('ModalInstanceCtrl', [ '$scope', '$uibModalInstance', 'enclosureService', 'enclosureId',
-function ($scope, $uibModalInstance, enclosureService, enclosureId) {
-
-	$scope.cancel = function () {
-		
-		$uibModalInstance.dismiss('cancel');
-		
-	};
-	
 	$scope.updateEnclosure = function(enclosure){
 		
-		console.log(enclosure);
-		
-		var enclosure = ({
-			enclosureName: 		$scope.updateEnclosureName,
-			animal: 			$scope.updateEnclosureAnimals,
-			numberOfAnimals: 	$scope.updateEnclosureNumAnimals,
-			feedingTime: 		$scope.updateEnclosureFeedTime,
-			condition:			$scope.updateEnclosureCondition
-		});
+		var getEnclosure = 1;
+		var setEnclosure = 2;
 		
 		console.log(enclosure);
 		
-		enclosureService.updateEnclosures(enclosure);
+		enclosureService.getSetEnclosure(getEnclosure, enclosure);
+		
+		$location.path('/editEnclosure');
 		
 	}
 	

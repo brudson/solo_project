@@ -51,6 +51,20 @@ public class EnclosureWebService {
 		return enclosureService.getAllEnclosures();
 		
 	}
+	
+	@RequestMapping(value="/editEnclosure", method=RequestMethod.PUT)
+	public void updateEnclosure(@RequestBody Enclosure editedEnclosure){
+		
+		enclosureService.editEnclosure(editedEnclosure);
+		
+	}
+	
+	@RequestMapping(value="/deleteEnclosure/{enclosureId}", method = RequestMethod.DELETE)
+	public void deleteEnclosure(@PathVariable Integer enclosureId){
+	
+		enclosureService.deleteEnclosure(enclosureId);
+		
+	}
 
 	
 }

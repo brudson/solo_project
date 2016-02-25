@@ -1,27 +1,44 @@
 angular.module('app').service('enclosureService', ['$http', 
 function($http){
 	
+	var currentEnclosure;
+	
 	function getAllEnclosures(){
 		
 		return $http.get('/viewEnclosure')
 		
 	}
-	
-	function updateEnclosures(enclosure){
-		console.log("im in the service");
-		console.log(enclosure);
-	}
-	
-	function deleteEnclosures(id){
+
+	function deleteEnclosures(enclosureId){
 		
+		console.log(enclosureId);
+		
+		return $http.delete('/deleteEnclosure/'+enclosureId);
 		
 	}
+	
+	function getSetEnclosure(num, enclosure){
+		
+		if(num == 1){
+			currentEnclosure = enclosure;
+		}
+		else if (num == 2){
+			return currentEnclosure;
+		}
+		
+	}
+	
+	function editEnclosure(editedEnclosure){
+		return $http.put("/editEnclosure", editedEnclosure);
+	}
+
 	
 	return {
 		
     	getAllEnclosures : getAllEnclosures,
     	deleteEnclosures : deleteEnclosures,
-    	updateEnclosures : updateEnclosures
+    	getSetEnclosure : getSetEnclosure,
+    	editEnclosure : editEnclosure
     	
     };
 	

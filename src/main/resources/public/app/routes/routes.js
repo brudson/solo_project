@@ -17,5 +17,9 @@ function($stateProvider, $urlRouteProvider){
 		url: '/favFood',
 		templateUrl: 'views/partials/favFood.html',
 		controller: 'favFoodCtrl'
+	}).state('editEnclosure',{
+		url: '/editEnclosure',
+		templateUrl: 'views/partials/editPages/editEnclosure.html',
+		controller: 'editEnclosureCtrl'
 	});
 }]);

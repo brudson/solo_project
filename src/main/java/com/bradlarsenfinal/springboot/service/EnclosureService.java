@@ -47,4 +47,16 @@ public class EnclosureService {
 		
 	}
 
+	public void editEnclosure(Enclosure editedEnclosure) {
+		
+		enclosureDao.editEnclosure(editedEnclosure);
+		
+	}
+
+	public void deleteEnclosure(Integer enclosureId) {
+		
+		enclosureDao.deleteEnclosure(enclosureId);
+		
+	}
+
 }

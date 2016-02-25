@@ -1,0 +1,13 @@
+<h1>Edit Your Enclosure</h1>
+
+<form name="editEnclosureForm">
+	Enclosure Name: 	 <input ng-model="editEnclosureName" 		name="edit name"				type="text"  	value={{editEnclosure.enclosureName}} 	required><br>
+	Animals: 			 <input ng-model="editEnclosureAnimals" 	name="edit animal" 				type="text"		value={{editEnclosure.animal}} 			required><br>
+	Number of Animals: 	 <input ng-model="editEnclosureNumAnimals" 	name="edit number of animals" 	type="number" 	value={{editEnclosure.numberOfAnimals}} required><br>
+	Enclosure Condition: <input ng-model="editEnclosureCondition" 	name="edit condition" 			type="text"		value={{editEnclosure.condition}} 		required><br>
+	Feeding Time: 		 <input ng-model="editEnclosureFeedTime" 	name="edit feeding time" 		type="text"		value={{editEnclosure.feedingTime}}		pattern="[1]*[0-9]{1}:[0-9]{2}\s[A, P, a, p][M, m]" required>
+	<br>
+	ex: 4:00 AM, 12:00 PM
+	<br>
+	<button ng-click="newEnclosure(editEnclosure.enclosureId)" ng-disabled="editEnclosureForm.$invalid" type="submit">submit</button>
+</form>

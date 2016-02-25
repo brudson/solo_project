@@ -52,5 +52,20 @@ public class EnclosureDao {
 		return allEnclosures;
 		
 	}
+
+	public void editEnclosure(Enclosure editedEnclosure) {
+		
+		em.merge(editedEnclosure);
+		em.flush();
+		
+	}
+
+	public void deleteEnclosure(Integer enclosureId) {
+		
+		Enclosure enclosure = em.find(Enclosure.class, enclosureId);
+		em.remove(enclosure);
+		em.flush();
+		
+	}
 	
 }
