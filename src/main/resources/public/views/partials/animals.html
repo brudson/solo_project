@@ -1,3 +1,32 @@
-<p>
-	{{welcome}}2
-</p>
+<form name="animalForm">
+	Animals Name: 	 	<input ng-model="animalName" 		name="animalName"		type="text"  	required><br>
+	Scientific Name: 	<input ng-model="scientificName" 	name="scientificName" 	type="text"		required><br>
+	Favorite Food: 		<input ng-model="favoriteFood" 		name="favoriteFood" 	type="text" 	required><br>
+	Information Link: 	<input ng-model="informationLink" 	name="informationLink" 	type="text"		required><br>
+	
+	<button id="submitAnimal" ng-click="newAnimal(); viewAnimals()" ng-disabled="animalForm.$invalid" type="submit">submit</button>
+</form>
+
+<button id="viewAnimals" ng-click="viewAnimals(); toggle()" type="button">{{animalStatus}}</button>
+
+<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
+	<tr class="info">
+		<td><strong>Animal Name			</strong></td>
+		<td><strong>Scientific Name		</strong></td>
+		<td><strong>Favorite Food		</strong></td>
+		<td><strong>InformationLink		</strong></td>
+		<td><strong>Enclosure Options	</strong></td>
+	</tr>
+	<tr ng-repeat="animal in animalObjects" class="info">
+		<td>{{animal.name}}				</td>
+		<td>{{animal.scientificName}}	</td>
+		<td>{{animal.favFood}}			</td>
+		<td>{{animal.infoLink}}			</td>
+		<td>
+			<button id="updateBtn" type="button" ng-click="updateAnimal(animal)" 							class="btn btn-warning">Update</button>
+			<button id="deleteBtn" type="button" ng-click="deleteAnimal(animal.animalId); viewAnimals();" 	class="btn btn-danger">Delete</button>
+		</td>
+	</tr>
+</table>
+	
+

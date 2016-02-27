@@ -52,7 +52,7 @@ public class EnclosureWebService {
 		
 	}
 	
-	@RequestMapping(value="/editEnclosure", method=RequestMethod.PUT)
+	@RequestMapping(value="/editEnclosure", method = RequestMethod.PUT)
 	public void updateEnclosure(@RequestBody Enclosure editedEnclosure){
 		
 		enclosureService.editEnclosure(editedEnclosure);

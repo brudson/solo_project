@@ -1,0 +1,10 @@
+<h1>Edit Your Animals</h1>
+{{editAnimal}}
+<form name="editAnimalForm">
+	Animals Name: 	 	<input ng-model="editAnimalName" 		name="editAnimalName"		type="text"  	required><br>
+	Scientific Name: 	<input ng-model="editScientificName" 	name="editScientificName" 	type="text"		required><br>
+	Favorite Food: 		<input ng-model="editFavoriteFood" 		name="editFavoriteFood" 	type="text" 	required><br>
+	Information Link: 	<input ng-model="editInformationLink" 	name="editInformationLink" 	type="text"		required><br>
+	
+	<button id="submitAnimal" ng-click="newAnimal(editAnimal.animalId); viewAnimals()" ng-disabled="editAnimalForm.$invalid" type="submit">submit</button>
+</form>
