@@ -1,0 +1,9 @@
+<h1>Edit Your Foods</h1>
+{{editFood}}
+<form name="editFoodForm">
+	Food: 	 	<input ng-model="editFoodName" 	name="editFoodName"		type="text"  	required><br>
+	Vendor: 	<input ng-model="editVendor" 	name="editVendor" 	type="text"		required><br>
+	Category: 	<input ng-model="editCategory" 	name="editCategory" type="text" 	required><br>
+	
+	<button id="submitFood" ng-click="newFood(editFood.foodId); viewFood()" ng-disabled="editFoodForm.$invalid" type="submit">submit</button>
+</form>

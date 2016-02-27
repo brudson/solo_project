@@ -1,3 +1,28 @@
-<p>
-	{{welcome}}1
-</p>
+<form name="FavfoodForm">
+	Favorite Food: 	<input ng-model="food" 			name="food"			type="text"  	required><br>
+	Vendor: 		<input ng-model="vendorName" 	name="vendor" 		type="text"		required><br>
+	Category: 		<input ng-model="category" 		name="category" 	type="text" 	required><br>
+	
+	<button id="submitFood" ng-click="newFood(); viewFood()" ng-disabled="foodForm.$invalid" type="submit">submit</button>
+</form>
+
+<button id="viewFood" ng-click="viewFood(); toggle()" type="button">{{foodStatus}}</button>
+
+<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
+	<tr class="info">
+		<td><strong>Food			</strong></td>
+		<td><strong>Vendor			</strong></td>
+		<td><strong>Category		</strong></td>
+		<td><strong>Food Options	</strong></td>
+	</tr>
+	<tr ng-repeat="food in foodObjects" class="info">
+		<td>{{food.name}}		</td>
+		<td>{{food.vendorName}}	</td>
+		<td>{{food.category}}	</td>
+		<td>
+			<button id="updateBtn" type="button" ng-click="updateFood(food)" 				class="btn btn-warning">Update</button>
+			<button id="deleteBtn" type="button" ng-click="deleteFood(food.foodId); viewFood()" 	class="btn btn-danger">Delete</button>
+		</td>
+	</tr>
+</table>
+	

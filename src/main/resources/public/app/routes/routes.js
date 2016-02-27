@@ -25,5 +25,9 @@ function($stateProvider, $urlRouteProvider){
 		url: '/editAnimal',
 		templateUrl: 'views/partials/editPages/editAnimal.html',
 		controller: 'editAnimalCtrl'
+	}).state('editFood',{
+		url: '/editFood',
+		templateUrl: 'views/partials/editPages/editFoods.html',
+		controller: 'editFavFoodCtrl'
 	});
 }]);

@@ -14,11 +14,21 @@ public class Food {
 	private String vendorName;
 	private String category;
 	
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Integer getFoodId() {
+		return foodId;
+	}
+	/**
+	 * @param foodId the foodId to set
+	 */
+	public void setFoodId(Integer foodId) {
+		this.foodId = foodId;
+	}
 	/**
 	 * @return the category
 	 */
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public String getCategory() {
 		return category;
 	}
@@ -55,13 +65,5 @@ public class Food {
 	/**
 	 * @return the foodId
 	 */
-	public Integer getFoodId() {
-		return foodId;
-	}
-	/**
-	 * @param foodId the foodId to set
-	 */
-	public void setFoodId(Integer foodId) {
-		this.foodId = foodId;
-	}
+
 }

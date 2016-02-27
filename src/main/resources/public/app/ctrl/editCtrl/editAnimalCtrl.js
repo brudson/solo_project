@@ -4,14 +4,10 @@ function($scope, $location, animalService){
 	//Used to get the current object from the service
 	var getAnimal = 2;
 	
-	//Pulls the data from the enclosureService
+	//Pulls the data from the animalService
 	$scope.editAnimal = animalService.getSetAnimal(getAnimal);
 	
-	console.log("hey");
-	console.log($scope.editAnimal);
-	console.log($scope.editAnimal.animalId);
-	
-	//Populates the form with the data form getSetEnclosure
+	//Populates the form with the data form getSetAnimal
 	$scope.editAnimalName 		= $scope.editAnimal.name;
 	$scope.editScientificName 	= $scope.editAnimal.scientificName;
 	$scope.editFavoriteFood		= $scope.editAnimal.favFood;
@@ -19,7 +15,7 @@ function($scope, $location, animalService){
 	
 	/*
 	 *Creates a new object with data from the form and calls the 
-	 *editEnclosure service to merge the new data with the existing data 
+	 *editAnimal service to merge the new data with the existing data 
 	 */
 	$scope.newAnimal = function newAnimal(animalId){
 		

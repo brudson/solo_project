@@ -22,8 +22,8 @@ function($http){
 	}
 	
 	/*
-	 * holds onto the current enclosure while the pages are changed
-	 * and the gets called by the enclosureCtrl
+	 * holds onto the current animal while the pages are changed
+	 * and the gets called by the animalCtrl
 	 */
 	function getSetAnimal(num, animal){
 		
@@ -37,7 +37,7 @@ function($http){
 	}
 	
 	
-	//Edits an existing enclosure in the database
+	//Edits an existing animal in the database
 	function editAnimal(editedAnimal){
 		console.log(editedAnimal);
 		return $http.put("/editAnimal", editedAnimal);

@@ -41,15 +41,13 @@ function($scope, $http, $location, animalService){
 	
 	/*
 	 * Gets all the animals from the database and pulls
-	 * them out of the promise to give $scope.enclosureObjects
+	 * them out of the promise to give $scope.animalObjects
 	 * and array of objects that is easier to pull from
 	 */
 	
 	$scope.viewAnimals = function viewAnimals(){
 		
 		animalService.getAllAnimals().then(function(data){
-			
-			console.log(data);
 			
 			return $scope.animalObjects = data.data;
 			
@@ -82,8 +80,6 @@ function($scope, $http, $location, animalService){
 	 */
 	$scope.deleteAnimal = function(id){
 		
-		console.log("deleting animal");
-		
 		animalService.deleteAnimal(id);
 		
 	}
@@ -95,8 +91,6 @@ function($scope, $http, $location, animalService){
 	$scope.updateAnimal = function(animal){
 		
 		var setAnimal = 1;
-		
-		console.log(animal);
 		
 		animalService.getSetAnimal(setAnimal, animal);
 		
