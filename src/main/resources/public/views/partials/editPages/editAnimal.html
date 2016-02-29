@@ -1,10 +1,11 @@
+<form id="form" name="animalForm" class = "form-horizontal">
 <h1>Edit Your Animals</h1>
-{{editAnimal}}
-<form name="editAnimalForm">
-	Animals Name: 	 	<input ng-model="editAnimalName" 		name="editAnimalName"		type="text"  	required><br>
-	Scientific Name: 	<input ng-model="editScientificName" 	name="editScientificName" 	type="text"		required><br>
-	Favorite Food: 		<input ng-model="editFavoriteFood" 		name="editFavoriteFood" 	type="text" 	required><br>
-	Information Link: 	<input ng-model="editInformationLink" 	name="editInformationLink" 	type="text"		required><br>
-	
-	<button id="submitAnimal" ng-click="newAnimal(editAnimal.animalId); viewAnimals()" ng-disabled="editAnimalForm.$invalid" type="submit">submit</button>
+	<ul class="form-style-1">
+	    <li><label>Animals Name: 		<span class="required">*</span></label><input ng-model="editAnimalName"       	type="text" 	name="field1" class="field-divided" required/></li>
+	    <li><label>Scientific Name: 	<span class="required">*</span></label><input ng-model="editScientificName"    	type="text" 	name="field1" class="field-divided" required/></li>
+	    <li><label>Favorite Food		<span class="required">*</span></label><input ng-model="editFavoriteFood" 		type="text" 	name="field2" class="field-divided" required/></li>
+	    <li><label>Information Link:	<span class="required">*</span></label><input ng-model="editInformationLink" 	type="text" 	name="field2" class="field-divided" required/></li>
+	    <br>
+	    <button id="submit" class="btn btn-success" ng-click="newAnimal(editAnimal.animalId); viewAnimals()" ng-disabled="editAnimalForm.$invalid" type="submit">Submit</button>
+	</ul>
 </form>

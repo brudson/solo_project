@@ -41,7 +41,7 @@ public class AnimalWebService {
 	@RequestMapping(value="/editAnimal", method = RequestMethod.PUT)
 	public void updateAnimal(@RequestBody Animal editedAnimal){
 		
-		animalService.animalService(editedAnimal);
+		animalService.editAnimal(editedAnimal);
 		
 	}
 	

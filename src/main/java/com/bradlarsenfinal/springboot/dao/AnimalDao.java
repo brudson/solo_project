@@ -38,7 +38,7 @@ public class AnimalDao {
 		return allAnimals;
 	}
 
-	public void editEnclosure(Animal editedAnimal) {
+	public void editAnimal(Animal editedAnimal) {
 		
 		em.merge(editedAnimal);
 		em.flush();

@@ -1,9 +1,18 @@
+<form id="form" name="foodForm" class = "form-horizontal">
 <h1>Edit Your Foods</h1>
-{{editFood}}
-<form name="editFoodForm">
-	Food: 	 	<input ng-model="editFoodName" 	name="editFoodName"		type="text"  	required><br>
-	Vendor: 	<input ng-model="editVendor" 	name="editVendor" 	type="text"		required><br>
-	Category: 	<input ng-model="editCategory" 	name="editCategory" type="text" 	required><br>
-	
-	<button id="submitFood" ng-click="newFood(editFood.foodId); viewFood()" ng-disabled="editFoodForm.$invalid" type="submit">submit</button>
-</form>
+	<ul class="form-style-1">
+	    <li><label>Favorite Food: 	<span class="required">*</span></label><input ng-model="editFoodName"   type="text" name="field1" class="field-divided" placeholder="Meat" required/></li>
+	    <li><label>Vendor: 			<span class="required">*</span></label><input ng-model="editVendor"    	type="text" name="field1" class="field-divided" placeholder="Marties Meat Shack" required/></li>
+	     <li>
+	        <label>Category</label>
+	        <select ng-model="editCategory" name="field4" class="field-select" placeholder="Select a Category" required>
+		        <option value="Meat">Meat</option>
+		        <option value="Vegtable">Vegetable</option>
+		        <option value="Fruit">Fruit</option>
+		        <option value="Grain">Grain</option>
+	        </select>
+	    </li>
+	    <br>
+	    <button id="submit" class="btn btn-success" ng-click="newFood(editFood.foodId); viewFood()" ng-disabled="editFoodForm.$invalid" type="submit">Submit</button>
+	</ul>
+</form>	

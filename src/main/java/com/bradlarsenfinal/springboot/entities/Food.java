@@ -4,6 +4,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity(name="food")
 
@@ -62,8 +65,6 @@ public class Food {
 	public void setName(String name) {
 		this.name = name;
 	}
-	/**
-	 * @return the foodId
-	 */
+
 
 }

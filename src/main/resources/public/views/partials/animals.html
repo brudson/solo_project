@@ -1,32 +1,39 @@
-<form name="animalForm">
-	Animals Name: 	 	<input ng-model="animalName" 		name="animalName"		type="text"  	required><br>
-	Scientific Name: 	<input ng-model="scientificName" 	name="scientificName" 	type="text"		required><br>
-	Favorite Food: 		<input ng-model="favoriteFood" 		name="favoriteFood" 	type="text" 	required><br>
-	Information Link: 	<input ng-model="informationLink" 	name="informationLink" 	type="text"		required><br>
-	
-	<button id="submitAnimal" ng-click="newAnimal(); viewAnimals()" ng-disabled="animalForm.$invalid" type="submit">submit</button>
-</form>
+<div class = "col-md-12">
+<div class = "col-sm-3">
+	<form id="form" name="animalForm" class = "form-horizontal">
+		<ul class="form-style-1">
+		    <li><label>Animals Name: 		<span class="required">*</span></label><input ng-model="animalName"       	type="text" 	name="field1" class="field-divided" placeholder="Tiger" required/></li>
+		    <li><label>Scientific Name: 	<span class="required">*</span></label><input ng-model="scientificName"    	type="text" 	name="field1" class="field-divided" placeholder="Panthera tigris" required/></li>
+		    <li><label>Favorite Food		<span class="required">*</span></label><input ng-model="favoriteFood" 		type="text" 	name="field2" class="field-divided" placeholder="Meat" required/></li>
+		    <li><label>Information Link:	<span class="required">*</span></label><input ng-model="informationLink" 	type="text" 	name="field2" class="field-divided" placeholder="https://en.wikipedia.org/wiki/Tiger" required/></li>
+		    <br>
+		    <button id="submit" class="btn btn-success" ng-click="newAnimal(); viewAnimals()" ng-disabled="animalForm.$invalid" type="submit">Submit</button>
+		    <hr>
+		    <p><strong>Click any table row to edit the data!</strong></p>
+		</ul>
+	</form>	
+</div>
+<div class = "col-sm-9">
+	<button id="viewAnimals" class="btn btn-default" ng-click="viewAnimals(); toggle()" type="button">{{animalStatus}}</button>
+	<hr>
+	<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
+		<tr class="success">
+			<td><strong>Animal Name			</strong></td>
+			<td><strong>Scientific Name		</strong></td>
+			<td><strong>Favorite Food		</strong></td>
+			<td><strong>Information Link	</strong></td>
+		</tr>
+		<tr ng-repeat="animal in animalObjects" class="success" ng-click="updateAnimal(animal)">
+			<td>{{animal.name}}				</td>
+			<td>{{animal.scientificName}}	</td>
+			<td>{{animal.favFood}}			</td>
+			<td><a href={{animal.infoLink}}>{{animal.infoLink}}</a></td>
+		</tr>
+	</table>
+</div>
+</div>
 
-<button id="viewAnimals" ng-click="viewAnimals(); toggle()" type="button">{{animalStatus}}</button>
 
-<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
-	<tr class="info">
-		<td><strong>Animal Name			</strong></td>
-		<td><strong>Scientific Name		</strong></td>
-		<td><strong>Favorite Food		</strong></td>
-		<td><strong>InformationLink		</strong></td>
-		<td><strong>Enclosure Options	</strong></td>
-	</tr>
-	<tr ng-repeat="animal in animalObjects" class="info">
-		<td>{{animal.name}}				</td>
-		<td>{{animal.scientificName}}	</td>
-		<td>{{animal.favFood}}			</td>
-		<td>{{animal.infoLink}}			</td>
-		<td>
-			<button id="updateBtn" type="button" ng-click="updateAnimal(animal)" 							class="btn btn-warning">Update</button>
-			<button id="deleteBtn" type="button" ng-click="deleteAnimal(animal.animalId); viewAnimals();" 	class="btn btn-danger">Delete</button>
-		</td>
-	</tr>
-</table>
+
 	
 

@@ -4,7 +4,7 @@ function($scope, $http, $location, favFoodService){
 	//Used in the toggle function to determine text output
 	$scope.toggleSelect 		= 0;
 	//Defaults the Show Animals button to Show Animals on page load
-	$scope.foodStatus 		= "Show Foods";
+	$scope.foodStatus 		= "Show Food";
 	
 	/*
 	 * newFood creates an object from data provided by the user and passes
@@ -64,12 +64,14 @@ function($scope, $http, $location, favFoodService){
 		//Interacts with ng-hide to make the table alternate on the front end
 		$scope.showTable = !$scope.showTable;
 		
+		
+		
 		if($scope.toggleSelect == 1){
 			$scope.foodStatus = "Show Food";
 			$scope.toggleSelect--;
 		}
 		else{
-			$scope.animalStatus = "Hide Food";
+			$scope.foodStatus = "Hide Food";
 			$scope.toggleSelect++;
 		}
 		

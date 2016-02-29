@@ -1,28 +1,40 @@
-<form name="FavfoodForm">
-	Favorite Food: 	<input ng-model="food" 			name="food"			type="text"  	required><br>
-	Vendor: 		<input ng-model="vendorName" 	name="vendor" 		type="text"		required><br>
-	Category: 		<input ng-model="category" 		name="category" 	type="text" 	required><br>
-	
-	<button id="submitFood" ng-click="newFood(); viewFood()" ng-disabled="foodForm.$invalid" type="submit">submit</button>
-</form>
-
-<button id="viewFood" ng-click="viewFood(); toggle()" type="button">{{foodStatus}}</button>
-
-<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
-	<tr class="info">
-		<td><strong>Food			</strong></td>
-		<td><strong>Vendor			</strong></td>
-		<td><strong>Category		</strong></td>
-		<td><strong>Food Options	</strong></td>
-	</tr>
-	<tr ng-repeat="food in foodObjects" class="info">
-		<td>{{food.name}}		</td>
-		<td>{{food.vendorName}}	</td>
-		<td>{{food.category}}	</td>
-		<td>
-			<button id="updateBtn" type="button" ng-click="updateFood(food)" 				class="btn btn-warning">Update</button>
-			<button id="deleteBtn" type="button" ng-click="deleteFood(food.foodId); viewFood()" 	class="btn btn-danger">Delete</button>
-		</td>
-	</tr>
-</table>
+<div class = "col-md-12">
+<div class = "col-sm-3">
+	<form id="form" name="foodForm" class = "form-horizontal">
+		<ul class="form-style-1">
+		    <li><label>Favorite Food: 	<span class="required">*</span></label><input ng-model="food"       	type="text" 	name="field1" class="field-divided" placeholder="Meat" required/></li>
+		    <li><label>Vendor: 			<span class="required">*</span></label><input ng-model="vendorName"    	type="text" 	name="field1" class="field-divided" placeholder="Marties Meat Shack" required/></li>
+		     <li>
+		        <label>Category</label>
+		        <select ng-model="category" name="field4" class="field-select" placeholder="Select a Category" required>
+			        <option value="Meat">Meat</option>
+			        <option value="Vegtable">Vegetable</option>
+			        <option value="Fruit">Fruit</option>
+			        <option value="Grain">Grain</option>
+		        </select>
+		    </li>
+		    <br>
+		    <button id="submit" class="btn btn-success" ng-click="newFood(); viewFood()" ng-disabled="foodForm.$invalid" type="submit">Submit</button>
+		    <hr>
+		    <p><strong>Click any table row to edit the data!</strong></p>
+		</ul>
+	</form>	
+</div>
+<div class = "col-sm-9">
+	<button id="viewFood" class="btn btn-default" ng-click="viewFood(); toggle()" type="button">{{foodStatus}}</button>
+	<hr>
+	<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable" ng-click="updateFood(food)">
+		<tr class="success">
+			<td><strong>Food			</strong></td>
+			<td><strong>Vendor			</strong></td>
+			<td><strong>Category		</strong></td>
+		</tr>
+		<tr ng-repeat="food in foodObjects" class="success" ng-click="updateFood(food)">
+			<td>{{food.name}}		</td>
+			<td>{{food.vendorName}}	</td>
+			<td>{{food.category}}	</td>
+		</tr>
+	</table>
+</div>
+</div>
 	

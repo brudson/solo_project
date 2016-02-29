@@ -16,7 +16,7 @@ public class EnclosureHappyPaths {
 	
 	@Before public void setup(){
 		
-		System.setProperty("webdriver.chrome.driver", "C:/Users/bLarsen/Desktop/class projects/final_project/solo_project/src/main/java/com/bradleylarsenfinal/pageObjectFramework/drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver = new ChromeDriver();
 		
 	}

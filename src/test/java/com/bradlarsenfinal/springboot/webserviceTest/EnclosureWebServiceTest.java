@@ -16,14 +16,12 @@ public class EnclosureWebServiceTest {
 
 	private EnclosureWebService enclosureWebService;
 	private EnclosureService enclosureService;
-	private Enclosure enclosure;
 	
 	@Before
 	public void setup(){
 		
 		enclosureWebService = new EnclosureWebService();
 		enclosureService = mock(EnclosureService.class);
-		enclosure = mock(Enclosure.class);
 		enclosureWebService.setEnclosureService(enclosureService);
 		
 	}
@@ -62,8 +60,6 @@ public class EnclosureWebServiceTest {
 	
 	@Test
 	public void deleteEnclosureTest(){
-		
-		Enclosure enclosure = new Enclosure();
 		
 		enclosureWebService.deleteEnclosure(anyInt());
 		verify(enclosureService).deleteEnclosure(anyInt());

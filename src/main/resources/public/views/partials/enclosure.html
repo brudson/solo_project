@@ -1,40 +1,42 @@
-<form name="enclosureForm">
-	Enclosure Name: 	 <input ng-model="enclosureName" 		name="name"					type="text"  	required><br>
-	Animals: 			 <input ng-model="enclosureAnimals" 	name="animal" 				type="text"		required><br>
-	Number of Animals: 	 <input ng-model="enclosureNumAnimals" 	name="numberOfAnimals" 		type="number" 	required><br>
-	Enclosure Condition: <input ng-model="enclosureCondition" 	name="condition" 			type="text"		required><br>
-	Feeding Time: 		 <input ng-model="enclosureFeedTime" 	name="feedingTime" 			pattern="[1]*[0-9]{1}:[0-9]{2}\s[A, P, a, p][M, m]" required>
-	<br>
-	ex: 4:00 AM, 12:00 PM
-	<br>
-	
-	<button id="submitEnclosure" ng-click="newEnclosure(); viewEnclosures()" ng-disabled="enclosureForm.$invalid" type="submit">submit</button>
-</form>
-
-<button id="viewEnclosures" ng-click="viewEnclosures(); toggle()" type="button">{{enclosureStatus}}</button>
-
-<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
-	<tr class="info">
-		<td><strong>Enclosure Name		</strong></td>
-		<td><strong>Animal				</strong></td>
-		<td><strong>Number Of Animals	</strong></td>
-		<td><strong>Feeding Time		</strong></td>
-		<td><strong>Condition			</strong></td>
-		<td><strong>Enclosure Options	</strong></td>
-	</tr>
-	<tr ng-repeat="enclosure in enclosureObjects" class="info">
-		<td>{{enclosure.enclosureName}}		</td>
-		<td>{{enclosure.animal}}			</td>
-		<td>{{enclosure.numberOfAnimals}}	</td>
-		<td>{{enclosure.feedingTime}}		</td>
-		<td>{{enclosure.condition}}			</td>
-		<td>
-			<button id="updateBtn" type="button" ng-click="updateEnclosure(enclosure)" 									class="btn btn-warning">Update</button>
-			<button id="deleteBtn" type="button" ng-click="deleteEnclosure(enclosure.enclosureId); viewEnclosures();" 	class="btn btn-danger">Delete</button>
-		</td>
-	</tr>
-</table>
-	
-
+<div class = "col-sm-3">
+	<form id="form" name="enclosureForm" class = "form-horizontal">
+		<ul class="form-style-1">
+		    <li><label>Enclosure Name: 		<span class="required">*</span></label><input ng-model="enclosureName"       type="text" name="field1" class="field-divided"   placeholder="First" 		required/></li>
+		    <li><label>Animal 				<span class="required">*</span></label><input ng-model="enclosureAnimals"    type="text" name="field1" class="field-divided"   placeholder="Tiger" 		required/></li>
+		    <li><label>Number of Animals	<span class="required">*</span></label><input ng-model="enclosureNumAnimals" type="number" name="field2" class="field-divided" placeholder="32"  		required/></li>
+		    <li><label>Enclosure Condition:	<span class="required">*</span></label><input ng-model="enclosureCondition"  type="text" name="field2" class="field-divided"   placeholder="Fantastic"	required/></li>
+		    <li><label>Feeding Time:		<span class="required">*</span></label><input ng-model="enclosureFeedTime"   type="text" name="field2" class="field-divided"   placeholder="4:00 PM" pattern="[1]*[0-9]{1}:[0-9]{2}\s[A, P, a, p][M, m]"/></li>
+		    <br>
+		    <button id="submit" class="btn btn-success" ng-click="newEnclosure(); viewEnclosures()" ng-disabled="enclosureForm.$invalid" type="submit">Submit</button>
+		    <hr>
+		    <p><strong>Click any table row to edit the data!</strong></p>
+		</ul>
+	</form>
+	</div>
+<div class = "col-sm-9">
+	<button id="viewEnclosures" class="btn btn-default" ng-click="viewEnclosures(); toggle()" type="button">{{enclosureStatus}}</button>
+	<hr>
+	<table class="table table-bordered table-striped table-condensed table-hover" ng-show="showTable">
+		<tr class="success">
+			<td><strong>Enclosure Name		</strong></td>
+			<td><strong>Animal				</strong></td>
+			<td><strong>Number Of Animals	</strong></td>
+			<td><strong>Feeding Time		</strong></td>
+			<td><strong>Condition			</strong></td>
+			<td><strong>Enclosure Options	</strong></td>
+		</tr>
+		<tr ng-repeat="enclosure in enclosureObjects" class="success" >
+			<td>{{enclosure.enclosureName}}		</td>
+			<td>{{enclosure.animal}}			</td>
+			<td>{{enclosure.numberOfAnimals}}	</td>
+			<td>{{enclosure.feedingTime}}		</td>
+			<td>{{enclosure.condition}}			</td>
+			<td>
+				<button id="updateBtn" type="button" ng-click="updateEnclosure(enclosure)" 									class="btn btn-warning">Update</button>
+				<button id="deleteBtn" type="button" ng-click="deleteEnclosure(enclosure.enclosureId); viewEnclosures();" 	class="btn btn-danger">Delete</button>
+			</td>
+		</tr>
+	</table>
+</div>
 
 

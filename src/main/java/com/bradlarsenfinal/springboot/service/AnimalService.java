@@ -33,9 +33,9 @@ public class AnimalService {
 		
 	}
 
-	public void animalService(Animal editedAnimal) {
+	public void editAnimal(Animal editedAnimal) {
 		
-		animalDao.editEnclosure(editedAnimal);
+		animalDao.editAnimal(editedAnimal);
 		
 	}
 
