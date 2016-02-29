@@ -45,6 +45,11 @@ public class EnclosureWebService {
 		
 	}
 	
+	/**
+	 * Calls the getAllEnclosure service and then returns that data
+	 * to the front end
+	 * @return
+	 */
 	@RequestMapping(value="/viewEnclosure", method = RequestMethod.GET)
 	public List<Enclosure> getEnclosures(){
 		
@@ -52,6 +57,11 @@ public class EnclosureWebService {
 		
 	}
 	
+	/**
+	 * Passes on the editedEnclosure object from the front end to the 
+	 * enclosureService
+	 * @param editedEnclosure
+	 */
 	@RequestMapping(value="/editEnclosure", method = RequestMethod.PUT)
 	public void updateEnclosure(@RequestBody Enclosure editedEnclosure){
 		
@@ -59,6 +69,10 @@ public class EnclosureWebService {
 		
 	}
 	
+	/**
+	 * Passes the id of the deleted enclosure to the enclosureService
+	 * @param enclosureId
+	 */
 	@RequestMapping(value="/deleteEnclosure/{enclosureId}", method = RequestMethod.DELETE)
 	public void deleteEnclosure(@PathVariable Integer enclosureId){
 	

@@ -1,3 +1,6 @@
+/* All html pages use the same styling to keep the page consistent each HTML file references this document
+   If you wish to make styling changes, it will effect all the elements in the app */
+
 body{
 	background-image: url('/enclosureNatureTheme.jpg'); 
 }
@@ -25,6 +28,8 @@ body{
 	border-radius: 3px;
 	font: 20px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
+/* Styling for all the forms in the web app */
 
 .form-style-1 {
     margin:10px auto;

@@ -13,6 +13,12 @@ import com.bradlarsenfinal.springboot.entities.Enclosure;
 import com.bradlarsenfinal.springboot.entities.Food;
 import com.bradlarsenfinal.springboot.service.FoodService;
 
+/**
+ * Receives all the data from the JS foodService and passes it onto 
+ * the java foodService
+ * @author Bradley
+ *
+ */
 @RestController
 public class FoodWebService {
 
@@ -25,6 +31,10 @@ public class FoodWebService {
 		
 	}
 	
+	/**
+	 * Receives the new food Object and passes it to the foodService
+	 * @param food
+	 */
 	@RequestMapping(value="/addFood", method = RequestMethod.POST)
 	public void addNewFood(@RequestBody Food food){
 		
@@ -32,6 +42,11 @@ public class FoodWebService {
 		
 	}
 	
+	/**
+	 * Receives the request to view all animals and then returns the 
+	 * data provided by the databse
+	 * @return
+	 */
 	@RequestMapping(value="/viewFood", method = RequestMethod.GET)
 	public List<Food> getFood(){
 		
@@ -39,6 +54,11 @@ public class FoodWebService {
 		
 	}
 	
+	/**
+	 * Receives the edited food and passes the object back to the 
+	 * foodService
+	 * @param editedFood
+	 */
 	@RequestMapping(value="/editFood", method = RequestMethod.PUT)
 	public void updateFood(@RequestBody Food editedFood){
 		
@@ -46,6 +66,10 @@ public class FoodWebService {
 		
 	}
 	
+	/**
+	 * Recieves the food Id an passes it to the foodService 
+	 * @param foodId
+	 */
 	@RequestMapping(value="/deleteFood/{foodId}", method = RequestMethod.DELETE)
 	public void deleteFood(@PathVariable Integer foodId){
 		System.out.println(foodId);

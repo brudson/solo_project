@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bradlarsenfinal.springboot.entities.Animal;
 import com.bradlarsenfinal.springboot.service.AnimalService;
 
+/**
+ * Communicates with the JS animalService and passes data back to the front end
+ * @author Bradley
+ *
+ */
 @RestController
 public class AnimalWebService {
 	
@@ -24,6 +29,11 @@ public class AnimalWebService {
 		
 	}
 	
+	/**
+	 * Receives the new Animal object from the front end and passes it 
+	 * to the animalService
+	 * @param animal
+	 */
 	@RequestMapping(value="/addAnimal", method = RequestMethod.POST)
 	public void addNewAnimal(@RequestBody Animal animal){
 		
@@ -31,6 +41,11 @@ public class AnimalWebService {
 		
 	}
 	
+	/**
+	 * Receives the request for all animals from the front end and 
+	 * calls the function in animalService
+	 * @return
+	 */
 	@RequestMapping(value="/viewAnimal", method = RequestMethod.GET)
 	public List<Animal> getAnimals(){
 		
@@ -38,6 +53,10 @@ public class AnimalWebService {
 		
 	}
 	
+	/**
+	 * Receives the editedAnimal and passes the object to the animalService
+	 * @param editedAnimal
+	 */
 	@RequestMapping(value="/editAnimal", method = RequestMethod.PUT)
 	public void updateAnimal(@RequestBody Animal editedAnimal){
 		
@@ -45,6 +64,11 @@ public class AnimalWebService {
 		
 	}
 	
+	/**
+	 * Receives an Id from the front end for the animal to be deleted and 
+	 * passes it to the animalService
+	 * @param animalId
+	 */
 	@RequestMapping(value="/deleteAnimal/{animalId}", method = RequestMethod.DELETE)
 	public void deleteAnimal(@PathVariable Integer animalId){
 		

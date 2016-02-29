@@ -41,18 +41,30 @@ public class EnclosureService {
 		
 	}
 
+	/**
+	 * Returns the list of enclosures to the webservice
+	 * @return
+	 */
 	public List<Enclosure> getAllEnclosures() {
 		
 		return enclosureDao.getAllEnclosures();
 		
 	}
 
+	/**
+	 * Passes on the new enclosure object to be merged into the database
+	 * @param editedEnclosure
+	 */
 	public void editEnclosure(Enclosure editedEnclosure) {
 		
 		enclosureDao.editEnclosure(editedEnclosure);
 		
 	}
 
+	/**
+	 * Passes the enclosure Id to the Dao for deletion
+	 * @param enclosureId
+	 */
 	public void deleteEnclosure(Integer enclosureId) {
 		
 		enclosureDao.deleteEnclosure(enclosureId);

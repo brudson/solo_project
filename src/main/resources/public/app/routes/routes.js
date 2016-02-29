@@ -1,6 +1,12 @@
 angular.module('app').config(['$stateProvider', '$urlRouterProvider',
 function($stateProvider, $urlRouteProvider){
 	
+	/*
+	 * This routes file creates and establishes all connections for each
+	 * page of this application, creating a url and a template to assign to that
+	 * url as well as an angular controller
+	 */
+	
 	$urlRouteProvider.otherwise('/home');
 	
 	$stateProvider

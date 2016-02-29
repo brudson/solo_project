@@ -44,7 +44,11 @@ public class EnclosureDao {
 		return enclosure;
 		
 	}
-
+	
+	/**
+	 * Gets a list of all the enclosures and returns it to the front end
+	 * @return
+	 */
 	public List<Enclosure> getAllEnclosures() {
 		
 		List<Enclosure> allEnclosures = em.createQuery("SELECT d FROM enclosure d", Enclosure.class).getResultList();
@@ -52,7 +56,11 @@ public class EnclosureDao {
 		return allEnclosures;
 		
 	}
-
+	
+	/**
+	 * Merges the new enclosure with the existing one
+	 * @param editedEnclosure
+	 */
 	public void editEnclosure(Enclosure editedEnclosure) {
 		
 		em.merge(editedEnclosure);
@@ -60,6 +68,10 @@ public class EnclosureDao {
 		
 	}
 
+	/**
+	 * Finds an enclosure based on an id and deletes it from the database
+	 * @param enclosureId
+	 */
 	public void deleteEnclosure(Integer enclosureId) {
 		
 		Enclosure enclosure = em.find(Enclosure.class, enclosureId);
