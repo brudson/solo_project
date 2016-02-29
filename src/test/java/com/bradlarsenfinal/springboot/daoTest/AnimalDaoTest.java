@@ -1,4 +1,4 @@
-package com.bradleylarsenfinal.springboot.daoTest;
+package com.bradlarsenfinal.springboot.daoTest;
 
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;

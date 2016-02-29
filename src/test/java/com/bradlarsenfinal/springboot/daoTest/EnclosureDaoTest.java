@@ -1,4 +1,4 @@
-package com.bradleylarsenfinal.springboot.daoTest;
+package com.bradlarsenfinal.springboot.daoTest;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;

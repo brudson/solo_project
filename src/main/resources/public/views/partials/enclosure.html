@@ -1,3 +1,4 @@
+<div class = "container-fluid">
 <div class = "col-sm-3">
 	<form id="form" name="enclosureForm" class = "form-horizontal">
 		<ul class="form-style-1">
@@ -8,8 +9,6 @@
 		    <li><label>Feeding Time:		<span class="required">*</span></label><input ng-model="enclosureFeedTime"   type="text" name="field2" class="field-divided"   placeholder="4:00 PM" pattern="[1]*[0-9]{1}:[0-9]{2}\s[A, P, a, p][M, m]"/></li>
 		    <br>
 		    <button id="submit" class="btn btn-success" ng-click="newEnclosure(); viewEnclosures()" ng-disabled="enclosureForm.$invalid" type="submit">Submit</button>
-		    <hr>
-		    <p><strong>Click any table row to edit the data!</strong></p>
 		</ul>
 	</form>
 	</div>
@@ -38,5 +37,5 @@
 		</tr>
 	</table>
 </div>
-
+</div>
 
